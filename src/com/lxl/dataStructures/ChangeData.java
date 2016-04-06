@@ -50,6 +50,8 @@ public class ChangeData {
     
     
     public static void main(String[] orgs){
+    	String tes = "123";
+    	System.out.println(tes.charAt(0));
     	char[] c = {'a','b','c'};
     	List ls = new ArrayList(Arrays.asList(c));
     	Iterator i1 = ls.iterator();

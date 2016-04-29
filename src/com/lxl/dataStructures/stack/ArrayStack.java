@@ -2,7 +2,6 @@ package com.lxl.dataStructures.stack;
 /**
  * 实现一个栈  数组实现
  * @author lxl
- *
  */
 public class ArrayStack {
 

@@ -10,41 +10,41 @@ import java.util.Set;
 public class ChangeData {
 	public static Object[] List2Array(List<Object> oList) {   
         Object[] oArray = oList.toArray(new Object[] {});   
-        // TODO ÐèÒªÔÚÓÃµ½µÄÊ±ºòÁíÍâÐ´·½·¨£¬²»Ö§³Ö·ºÐÍµÄArray.   
+        // TODO ï¿½ï¿½Òªï¿½ï¿½ï¿½Ãµï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö§ï¿½Ö·ï¿½ï¿½Íµï¿½Array.   
         return oArray;   
     }   
   
     public static Object[] Set2Array(Set<Object> oSet) {   
         Object[] oArray = oSet.toArray(new Object[] {});   
-        // TODO ÐèÒªÔÚÓÃµ½µÄÊ±ºòÁíÍâÐ´·½·¨£¬²»Ö§³Ö·ºÐÍµÄArray.   
+        // TODO ï¿½ï¿½Òªï¿½ï¿½ï¿½Ãµï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö§ï¿½Ö·ï¿½ï¿½Íµï¿½Array.   
         return oArray;   
     }   
   
     public static <T extends Object> List<T> Set2List(Set<T> oSet) {   
         List<T> tList = new ArrayList<T>(oSet);   
-        // TODO ÐèÒªÔÚÓÃµ½µÄÊ±ºòÁíÍâÐ´¹¹Ôì£¬¸ù¾ÝÐèÒªÉú³ÉListµÄ¶ÔÓ¦×ÓÀà¡£   
+        // TODO ï¿½ï¿½Òªï¿½ï¿½ï¿½Ãµï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½ï¿½ì£¬ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½Listï¿½Ä¶ï¿½Ó¦ï¿½ï¿½ï¿½à¡£   
         return tList;   
     }   
   
     public static <T extends Object> List<T> Array2List(T[] tArray) {   
         List<T> tList = Arrays.asList(tArray);   
-        // TODO µ¥´¿µÄasList()·µ»ØµÄtListÎÞ·¨add(),remove(),clear()µÈÒ»Ð©Ó°Ïì¼¯ºÏ¸öÊýµÄ²Ù×÷£¬   
-        // ÒòÎªArrays$ArrayListºÍjava.util.ArrayListÒ»Ñù£¬¶¼ÊÇ¼Ì³ÐAbstractList£¬   
-        // µ«ÊÇArrays$ArrayListÃ»ÓÐoverrideÕâÐ©·½·¨£¬¶øjava.util.ArrayListÊµÏÖÁË¡£   
-        // TODO ½¨ÒéÊ¹ÓÃListµÄ×ÓÀà×ö·µ»Ø£¬¶ø²»ÊÇArrays$ArrayList¡£¸ù¾ÝÐèÒª°É¡£ÈçÏÂÐÐ×¢ÊÍ:   
+        // TODO ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½asList()ï¿½ï¿½ï¿½Øµï¿½tListï¿½Þ·ï¿½add(),remove(),clear()ï¿½ï¿½Ò»Ð©Ó°ï¿½ì¼¯ï¿½Ï¸ï¿½ï¿½ï¿½Ä²ï¿½ï¿½ï¿½ï¿½ï¿½   
+        // ï¿½ï¿½ÎªArrays$ArrayListï¿½ï¿½java.util.ArrayListÒ»ï¿½ï¿½ï¿½Ç¼Ì³ï¿½AbstractListï¿½ï¿½   
+        // ï¿½ï¿½ï¿½ï¿½Arrays$ArrayListÃ»ï¿½ï¿½overrideï¿½ï¿½Ð©ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½java.util.ArrayListÊµï¿½ï¿½ï¿½Ë¡ï¿½   
+        // TODO ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½Listï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø£ï¿½ï¿½ï¿½ï¿½ï¿½Arrays$ArrayListï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½É¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¢ï¿½ï¿½:   
         // List<T> tList = new ArrayList<T>(Arrays.asList(tArray));   
         return tList;   
     }   
   
     public static <T extends Object> Set<T> List2Set(List<T> tList) {   
         Set<T> tSet = new HashSet<T>(tList);   
-        //TODO ¾ßÌåÊµÏÖ¿´ÐèÇó×ª»»³É²»Í¬µÄSetµÄ×ÓÀà¡£   
+        //TODO ï¿½ï¿½ï¿½ï¿½Êµï¿½Ö¿ï¿½ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½ï¿½É²ï¿½Í¬ï¿½ï¿½Setï¿½ï¿½ï¿½ï¿½ï¿½à¡£   
         return tSet;   
     }   
   
     public static <T extends Object> Set<T> Array2Set(T[] tArray) {   
         Set<T> tSet = new HashSet<T>(Arrays.asList(tArray));   
-        // TODO Ã»ÓÐÒ»²½µ½Î»µÄ·½·¨£¬¸ù¾Ý¾ßÌåµÄ×÷ÓÃ£¬Ñ¡ÔñºÏÊÊµÄSetµÄ×ÓÀàÀ´×ª»»¡£   
+        // TODO Ã»ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½Î»ï¿½Ä·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã£ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½Êµï¿½Setï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½   
         return tSet;   
     } 
     

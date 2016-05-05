@@ -2,9 +2,15 @@ package com.lxl.dataStructures;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 
 public class ChangeData {
@@ -50,31 +56,53 @@ public class ChangeData {
     
     
     public static void main(String[] orgs){
-    	String tes = "123";
-    	System.out.println(tes.charAt(0));
-    	char[] c = {'a','b','c'};
-    	List ls = new ArrayList(Arrays.asList(c));
-    	Iterator i1 = ls.iterator();
-    	while(i1.hasNext()){
-    		System.out.println(i1.next().toString());
+    	Map map  = new HashMap();
+    	map.put("1", "2");
+    	map.put(null, "2");
+    	map.put("1", "7");
+    	map.put("2", "3");
+    	String key = (String) map.remove(null);
+    	System.out.println("key"+key);
+    	Set set = map.keySet();
+    	Iterator iw = set.iterator();
+//    	while(iw.hasNext()){
+//    		System.out.println(iw.next().toString());
+//    	}
+    	
+
+    	Set<Entry<String, String>> entries = map.entrySet();
+
+    	for (Entry<String, String> entry : entries) {      System.out.println(entry.getKey()+":"+entry.getValue()); 
+
     	}
-    	Object[] str =  ls.toArray();
-    	System.out.println(str[0]);
-    	List ls2 = Arrays.asList(str);
-    	Iterator i2 = ls2.iterator();
-    	while(i2.hasNext()){
-    		System.out.println(i2.next().toString());
-    	}
-    	Set set = new HashSet(ls2);
-    	Iterator i3 = set.iterator();
-    	while(i3.hasNext()){
-    		System.out.println(i3.next().toString());
-    	}
-    	List ls3 = Arrays.asList(set);
-    	Iterator i = set.iterator();
-    	while(i.hasNext()){
-    		System.out.println(i.next().toString());
-    	}
+//    	
+//    	String tes = "123";
+//    	System.out.println(tes.charAt(0));
+//    	char[] c = {'a','b','c'};
+//    	Integer[] s = {1};
+//    	Arrays.sort(c);
+//    	List ls = new ArrayList(Arrays.asList(s));
+//    	Iterator i1 = ls.iterator();
+//    	while(i1.hasNext()){
+//    		System.out.println(i1.next().toString());
+//    	}
+//    	Object[] str =  ls.toArray();
+//    	System.out.println(str[0]);
+//    	List ls2 = Arrays.asList(str);
+//    	Iterator i2 = ls2.iterator();
+//    	while(i2.hasNext()){
+//    		System.out.println(i2.next().toString());
+//    	}
+//    	Set set = new HashSet(ls2);
+//    	Iterator i3 = set.iterator();
+//    	while(i3.hasNext()){
+//    		System.out.println(i3.next().toString());
+//    	}
+//    	List ls3 = Arrays.asList(set);
+//    	Iterator i = set.iterator();
+//    	while(i.hasNext()){
+//    		System.out.println(i.next().toString());
+//    	}
     	
     }
 }

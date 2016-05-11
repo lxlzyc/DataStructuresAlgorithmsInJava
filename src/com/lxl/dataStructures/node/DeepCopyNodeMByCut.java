@@ -1,5 +1,7 @@
 package com.lxl.dataStructures.node;
 
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -11,9 +13,9 @@ import java.util.Set;
  */
 public class DeepCopyNodeMByCut {
 
-	private Map<NodeM, NodeM[]> oldArr;
-	private Set<NodeM> nodeMset;
-	private Set<NodeM> newnodeMset;
+	private Map<NodeM, NodeM[]> oldArr = new HashMap<NodeM, NodeM[]>();
+	private Set<NodeM> nodeMset = new HashSet<NodeM>();
+	private Set<NodeM> newnodeMset = new HashSet<NodeM>();
 	public NodeM[] cutAll(NodeM node){
 		NodeM[] nodearr = node.getNodeArr();
 		node.setNodeArr(null);
@@ -31,15 +33,22 @@ public class DeepCopyNodeMByCut {
 		}
 	} 
 	
-	public void deepCopy(NodeM node){
+	public NodeM deepCopy(NodeM node){
+		nodeMset.clear();
 		this.addNodeM(node);
 		//每一个都替换掉
+		NodeM reNodeM = new NodeM();
+		boolean flag = true;
 		for(NodeM nodem:nodeMset){
 			int nodeSize = nodem.getNodeSize();
 			NodeM[] nodeArr = nodem.getNodeArr();
 			NodeM newnode = new NodeM();
 			newnode.setNodeSize(nodeSize);
 			newnode.setNodeArr(nodeArr);
+			if(flag){
+				flag = false;
+				reNodeM =newnode;
+			}
 			//记录原来的连接
 			oldArr.put(nodem, nodeArr);
 			//把原来的连接断掉
@@ -64,6 +73,7 @@ public class DeepCopyNodeMByCut {
 		}
 		//恢复旧的连接
 		this.regetOldNode();
+		return reNodeM;
 	}
 	//恢复旧的连接
 	public void regetOldNode() {

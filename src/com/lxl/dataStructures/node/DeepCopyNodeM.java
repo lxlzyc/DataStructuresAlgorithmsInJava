@@ -1,20 +1,21 @@
 package com.lxl.dataStructures.node;
 
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 /**
- * 复制图
+ * 复制图---尚有缺陷
  * 待优化
  * @author lxl
  *
  */
 public class DeepCopyNodeM {
 
-	private Map<NodeM,Integer> map;
-	private Map<Integer,NodeM> mapcopy;
-	private Map<Integer,Integer[]> mapArr;
+	private Map<NodeM,Integer> map = new HashMap<NodeM, Integer>();
+	private Map<Integer,NodeM> mapcopy = new HashMap<Integer, NodeM>();
+	private Map<Integer,Integer[]> mapArr = new HashMap<Integer, Integer[]>();
 	private Integer nodeFlag = 0;
 	public void copyAllNode(NodeM node){
 		int nodeSize = node.getNodeSize();
@@ -64,10 +65,15 @@ public class DeepCopyNodeM {
 			NodeM[] nodeMarr = null;
 			int i = 0;
 			Integer[] iarr = mapArr.get(thisNodeFlag);
-			for(int j:iarr){
-				nodeMarr[i] = mapcopy.get(iarr[j]);
-				i++;
+			if(iarr == null){
+				System.out.println("null");
+			}else{
+				for(int j:iarr){
+					nodeMarr[i] = mapcopy.get(iarr[j]);
+					i++;
+				}			
 			}
+
 			thisNode.setNodeArr(nodeMarr);
 		}
 		Set<NodeM> set = map.keySet();
